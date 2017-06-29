@@ -5,16 +5,6 @@ Instead of most common migration libraries, Amigro is not aimed to migrate DB, b
 
 ## Install
 
-Add maven repository
-```
-repositories {
-    maven {
-        url 'http://dl.bintray.com/comm1x/maven'
-    }
-}
-```
-
-And then add dependency
 ```
 dependencies {
     compile 'com.github.comm1x:amigro:1.0.0'
