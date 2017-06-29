@@ -11,6 +11,8 @@ dependencies {
 }
 ```
 
+Last version [![Abc](https://img.shields.io/bintray/v/comm1x/maven/amigro.svg)](https://bintray.com/comm1x/maven/amigro)
+
 ## Example
 
 ```java
