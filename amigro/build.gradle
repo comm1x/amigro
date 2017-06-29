@@ -29,3 +29,18 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 }
+
+ext {
+    bintrayUser = 'comm1x'
+}
+
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    groupId = 'com.github.comm1x'
+    artifactId = 'amigro'
+    publishVersion = '1.0.1'
+    desc = 'Amigro is migration tool Android, allowing declarating code, that will be runned once after application update'
+    licences = ['MIT']
+    uploadName='amigro'
+    website = 'https://github.com/comm1x/amigro.git'
+}

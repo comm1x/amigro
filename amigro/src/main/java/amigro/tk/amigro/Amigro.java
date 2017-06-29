@@ -48,6 +48,7 @@ public class Amigro {
             latestVersion = task.getVersion();
         }
         editor.apply();
+        tasks.clear();
     }
 
     public boolean isFirstInstall(Activity activity, int latestVersion) {
