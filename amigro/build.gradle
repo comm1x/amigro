@@ -38,7 +38,7 @@ apply plugin: 'com.novoda.bintray-release'
 publish {
     groupId = 'com.github.comm1x'
     artifactId = 'amigro'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'Amigro is migration tool Android, allowing declarating code, that will be runned once after application update'
     licences = ['MIT']
     uploadName='amigro'

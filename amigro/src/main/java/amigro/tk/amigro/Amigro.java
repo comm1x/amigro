@@ -1,6 +1,6 @@
 package amigro.tk.amigro;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.preference.PreferenceManager;
@@ -23,12 +23,12 @@ public class Amigro {
         return INSTANCE;
     }
 
-    public void apply(Activity activity) {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
+    public void apply(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         int latestVersion = prefs.getInt(MIGRATION_KEY, 0);
         SharedPreferences.Editor editor = prefs.edit();
 
-        if (isFirstInstall(activity, latestVersion)) {
+        if (isFirstInstall(context, latestVersion)) {
             if (tasks.size() > 0) {
                 editor.putInt(MIGRATION_KEY, tasks.last().getVersion());
                 editor.apply();
@@ -51,10 +51,10 @@ public class Amigro {
         tasks.clear();
     }
 
-    public boolean isFirstInstall(Activity activity, int latestVersion) {
+    public boolean isFirstInstall(Context context, int latestVersion) {
         try {
-            long firstInstallTime = activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0).firstInstallTime;
-            long lastUpdateTime = activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0).lastUpdateTime;
+            long firstInstallTime = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).firstInstallTime;
+            long lastUpdateTime = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
             Log.d(TAG, "First Install Time: " + firstInstallTime + " Last update time: " + lastUpdateTime);
             return latestVersion <= 0;
         } catch (PackageManager.NameNotFoundException e) {
