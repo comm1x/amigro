@@ -9,7 +9,7 @@ Add maven repository
 ```
 repositories {
     maven {
-        url  "http://dl.bintray.com/comm1x/maven"
+        url 'http://dl.bintray.com/comm1x/maven'
     }
 }
 ```
